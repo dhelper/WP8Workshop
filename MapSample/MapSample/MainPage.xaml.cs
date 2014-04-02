@@ -26,7 +26,14 @@ namespace MapSample
 
             _geolocator = new Geolocator();
             _locationLayer = new MapLayer();
+            MyMap.Loaded += HandleMapLoaded;
             MyMap.Layers.Add(_locationLayer);
+        }
+
+        private void HandleMapLoaded(object sender, RoutedEventArgs e)
+        {
+//            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.ApplicationId = "ApplicationID";
+//            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.AuthenticationToken = "AuthenticationToken";
         }
 
         // Sample code for building a localized ApplicationBar
